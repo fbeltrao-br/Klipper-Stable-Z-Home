@@ -1,3 +1,18 @@
+# About this fork
+I made small changes to the original code to add `z_hop` and `allow_home` parameters, and modified the pre-home gcode behaviour to run just a single time before attemping to run the actual `STABLE_Z_HOME` routine instead of a loop before every attempt, needed to fit my needs with a Two Trees Sapphire Plus (SP-5) with BLTouch probe.
+
+The new parameters are:
+```
+[stable_z_home]
+# ...
+#z_hop:
+#   The distance (in mm) to lift the toolhead between each retry. The default is to not implement Z hop.
+#allow_home:
+#   If true, allows STABLE_Z_HOME to home all axis (including Z) before attempting to run it's probing routines. The default is False.
+```
+
+Original README.md below.
+
 # Stable Z Homing for Klipper
 
 _Note: due to recent events, various technical shortcomings with Voron printers,
